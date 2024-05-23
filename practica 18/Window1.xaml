@@ -1,0 +1,52 @@
+﻿<Window x:Class="practica_18.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Система Экзаменов" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Окно для студента -->
+        <Border Grid.Column="0" Margin="10">
+            <StackPanel>
+                <Label Content="Экзамен для Студента" FontSize="16" FontWeight="Bold" Margin="0 0 0 10"/>
+                <TextBox x:Name="FirstNameTextBox" Margin="0 0 0 5" Text="Введите имя"/>
+                <TextBox x:Name="LastNameTextBox" Margin="0 0 0 5" Text="Введите фамилию"/>
+                <ComboBox x:Name="SubjectComboBox" Margin="0 0 0 5">
+                    <ComboBoxItem Content="Математика"/>
+                    <ComboBoxItem Content="Наука"/>
+                    <ComboBoxItem Content="История"/>
+                </ComboBox>
+                <Button Content="Начать Экзамен" Click="StartExamButton_Click" Margin="0 0 0 10"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Окно для преподавателя -->
+        <Border Grid.Column="1" Margin="10">
+            <StackPanel Margin="-17,0,0,0">
+                <Label Content="Интерфейс для Преподавателя" FontSize="16" FontWeight="Bold" Margin="0 0 0 10"/>
+                <ComboBox x:Name="SubjectSelectionComboBox" Margin="0 0 0 5">
+                    <ComboBoxItem Content="Математика"/>
+                    <ComboBoxItem Content="Наука"/>
+                    <ComboBoxItem Content="История"/>
+                </ComboBox>
+                <TextBox x:Name="QuestionTextBox" Margin="0 0 0 5" Text="Введите вопрос"/>
+                <TextBox x:Name="Option1TextBox" Margin="0 0 0 5" Text="Вариант 1"/>
+                <TextBox x:Name="Option2TextBox" Margin="0 0 0 5" Text="Вариант 2"/>
+                <TextBox x:Name="Option3TextBox" Margin="0 0 0 5" Text="Вариант 3"/>
+                <TextBox x:Name="Option4TextBox" Margin="0 0 0 5" Text="Вариант 4"/>
+                <ComboBox x:Name="CorrectAnswerComboBox" Margin="0 0 0 5">
+                    <ComboBoxItem Content="Вариант 1"/>
+                    <ComboBoxItem Content="Вариант 2"/>
+                    <ComboBoxItem Content="Вариант 3"/>
+                    <ComboBoxItem Content="Вариант 4"/>
+                </ComboBox>
+                <Button Content="Добавить Вопрос" Click="AddQuestionButton_Click" Margin="0 0 0 5"/>
+                <Button Content="Обновить" Click="RefreshButton_Click"/>
+                <Button Content="Сохранить в файл" Click="SaveToFileButton_Click" Margin="0 10 0 0"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
